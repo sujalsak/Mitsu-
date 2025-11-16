@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Apology Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .text {
+            font-size: 1.5em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff6b9d, 0 0 20px #ff6b9d, 0 0 30px #ff6b9d;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff6b9d, 0 0 20px #ff6b9d, 0 0 30px #ff6b9d; }
+            to { text-shadow: 0 0 20px #c44569, 0 0 30px #c44569, 0 0 40px #c44569; }
+        }
+        .button {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 25px;
+            cursor: pointer;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 20px #ff6b9d;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px #ff6b9d;
+        }
+        .hidden {
+            display: none;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .poll, .mcq {
+            margin-top: 30px;
+        }
+        .option {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ff6b9d;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .option:hover {
+            background: rgba(255, 107, 157, 0.3);
+        }
+        .result {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        .hearts {
+            position: absolute;
+            font-size: 2em;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .final-message {
+            font-size: 1.5em;
+            text-shadow: 0 0 10px #ff6b9d;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @media (max-width: 768px) {
+            .text { font-size: 1.2em; }
+            .button { padding: 12px 25px; font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="apology" class="text fade-in">
+            𝗗𝗲𝗸𝗵𝗼 𝗠𝗶𝘁𝘀𝘂 𝗜𝗺 𝘀𝗼𝗿𝗿𝘆 🥺<br>
+            𝗠𝗮𝗶 𝗷𝘆𝗱𝗮 𝗵𝗶 𝗴𝘂𝘀𝘀𝗮 𝗸𝗮𝗿 𝗿𝗮𝗵𝗮 𝗵𝘂 𝘁𝘂𝗺𝗵𝗲 😔<br>
+            𝗠𝘂𝗷𝗵𝗲 𝗸𝗵𝘂𝗱 𝗽𝗲 𝗰𝗼𝗻𝘁𝗿𝗼𝗹 𝗯𝗯𝗶 𝗿𝗮𝗸𝗵𝗻𝗮 𝗰𝗵𝗮𝗵𝗶𝘆𝗲😿
+        </div>
+        <button id="forgiveBtn" class="button">Forgive ❤️</button>
+        
+        <div id="thanks" class="text hidden">
+            𝙏𝙝𝙖𝙣𝙠𝙨 𝙛𝙤𝙧 𝙛𝙧𝙤𝙜𝙞𝙫𝙞𝙣𝙜 𝙢𝙚 🙃<br><br>
+            𝗔𝗡𝗗 𝗵𝗮𝗮 𝘀𝗮𝘁𝗵 𝗺𝗲 𝗺𝗮𝗶 𝗯𝗼𝗵𝗼𝘁 𝗷𝘆𝗮𝗱𝗮<br>
+            𝗼𝘃𝗲𝗿𝗰𝗮𝗿𝗶𝗻𝗴 𝘆𝗮 𝗼𝘃𝗲𝗿𝗹𝗼𝘃𝗶𝗻𝗴 𝗯𝗵𝗶 𝗵𝗼 𝗿𝗮𝗵𝗮 𝗵𝘂<br>
+            𝘂𝘀𝗸𝗲 𝗹𝗶𝘆𝗲 𝗯𝗵𝗶 𝘀𝗼𝗿𝗿𝘆(ᗒᗣᗕ)՞<br><br>
+            ☀︎︎ 𝗶𝗺 𝗺𝗲𝗮𝗺 𝘁𝘂𝗺𝗵𝗲 𝗶𝗿𝗶𝘁𝗮𝘁𝗲 𝘁𝗼 𝗻𝗮𝗵𝗶 𝗸𝗮𝗿𝘁𝗮 𝗻𝗮𝗮𝗵 𝗺𝗮𝗶
+        </div>
+        
+        <div id="poll" class="poll hidden">
+            <div class="text">Should I change maybe?</div>
+            <div class="option" data-option="A">A) Koi jarurat nahi</div>
+            <div class="option" data-option="B">B) Yes</div>
+            <div id="pollResult" class="result hidden"></div>
+        </div>
+        
+        <div id="mcq" class="mcq hidden">
+            <div class="text">
+                𝙏𝙪𝙢 𝙢𝙪𝙟𝙝𝙚 𝙠𝙤𝙞 𝙜𝙞𝙛𝙩 𝙙𝙚𝙚 𝙨𝙖𝙠𝙩𝙞 𝙝𝙤<br>
+                𝙫𝙖𝙞𝙨𝙚 𝙮𝙚 𝙤𝙥𝙩𝙞𝙤𝙣𝙖𝙡 𝙝𝙖𝙞 𝙗𝙪𝙩 𝙙𝙚𝙙𝙤 𝙮𝙖𝙖𝙧 ٩༼ つ ◕◡◕ ༽つ
+            </div>
+            <div class="option" data-mcq="A">A) 𝗔 𝘃𝗼𝗶𝗰𝗲 𝗺𝗲𝘀𝘀𝗮𝗴𝗲</div>
+            <div class="option" data-mcq="B">B) 𝗠𝗲𝗻𝘁𝗶𝗼𝗻 𝗶𝗻 𝘆𝗼𝘂𝗿 𝗦𝘁𝗼𝗿𝘆</div>
+            <div class="option" data-mcq="C">C) 𝙋𝙞𝙘 𝙤𝙛 𝙮𝙤𝙪𝙧 𝙜𝙡𝙤𝙨𝙨𝙮 𝙚𝙮𝙚𝙯</div>
+            <div class="option" data-mcq="D">D) 𝗠𝗲𝗻𝘁𝗶𝗼𝗻 𝗶𝗻 𝘆𝗼𝘂𝗿 𝗻𝗼𝘁𝗲 (𝗞𝗼𝗶 𝗮𝗰𝗵𝗮 𝗴𝗮𝗮𝗻𝗮 𝗰𝗵𝗼𝘀𝗲 𝗸𝗮𝗿𝗻𝗮)</div>
+            <div class="option" data-mcq="E">E) 𝗔𝗹𝗹 𝗼𝗳 𝘁𝗵𝗲𝘀𝗲</div>
+        </div>
+        
+        <div id="final" class="final-message hidden">
+            𝗧𝗵𝗮𝗻𝘀 𝘆𝗼𝘂 𝗲𝘃𝗲𝗿𝘆 𝗺𝘂𝗰𝗵<br>
+            𝙡𝙤𝙫𝙚 𝙮𝙤𝙪~~
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('forgiveBtn').addEventListener('click', function() {
+            document.getElementById('apology').classList.add('hidden');
+            document.getElementById('forgiveBtn').classList.add('hidden');
+            document.getElementById('thanks').classList.remove('hidden');
+            document.getElementById('thanks').classList.add('fade-in');
+            setTimeout(() => {
+                document.getElementById('poll').classList.remove('hidden');
+                document.getElementById('poll').classList.add('fade-in');
+            }, 2000);
+        });
+
+        const pollOptions = document.querySelectorAll('.poll .option');
+        pollOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const chosen = this.getAttribute('data-option');
+                const resultDiv = document.getElementById('pollResult');
+                resultDiv.innerHTML = `You chose: ${chosen}. Votes: A: 45%, B: 55% (simulated)`;
+                resultDiv.classList.remove('hidden');
+                resultDiv.classList.add('fade-in');
+                setTimeout(() => {
+                    document.getElementById('mcq').classList.remove('hidden');
+                    document.getElementById('mcq').classList.add('fade-in');
+                }, 2000);
+            });
+        });
+
+        const mcqOptions = document.querySelectorAll('.mcq .option');
+        mcqOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                document.getElementById('final').classList.remove('hidden');
+                document.getElementById('final').classList.add('fade-in');
+                // Add floating hearts
+                for (let i = 0; i < 10; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'hearts';
+                    heart.innerHTML = '❤️';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 3000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
